@@ -1,0 +1,63 @@
+[
+    {
+        "id": 1,
+        "name": "Lizzo",
+        "image": "/images/lizzo.jpg",
+        "count": 0
+    },{
+        "id": 2, 
+        "name": "Meg",
+        "image":"/images/meg.jpg",
+        "count": 0
+    },{
+        "id": 3, 
+        "name": "NF",
+        "image":"/images/NF.jpg",
+        "count": 0
+    },{
+        "id": 4, 
+        "name": "Nipsey",
+        "image":"/images/Nipsey.jpg",
+        "count": 0
+    },{
+        "id": 5, 
+        "name": "Beyonce",
+        "image":"/images/beyonce.jpg",
+        "count": 0
+    },{
+        "id": 6, 
+        "name": "JCole",
+        "image":"/images/jcole.jpg",
+        "count": 0
+    },{
+        "id": 7, 
+        "name": "Jacob Banks",
+        "image":"/images/jacob.jpg",
+        "count": 0
+    },{
+        "id": 8, 
+        "name": "Samoht",
+        "image":"/images/samoht.jpg",
+        "count": 0
+    },{
+        "id": 9, 
+        "name": "Jay-Z",
+        "image":"/images/Jayz.jpg",
+        "count": 0
+    },{
+        "id": 10, 
+        "name": "Russ",
+        "image":"/images/russ.jpg",
+        "count": 0
+    },{
+        "id": 11, 
+        "name": "6lack",
+        "image":"/images/6lack.jpg",
+        "count": 0
+    },{
+        "id": 12, 
+        "name": "Drake",
+        "image":"/images/drake.jpg",
+        "count": 0
+    }
+]
