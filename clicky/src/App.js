@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import artists from "./artists.json";
 import Card from "./components/card";
+import Wrapper from "./components/Wrapper";
 
 class App extends Component {
   state = {
