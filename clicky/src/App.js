@@ -17,7 +17,7 @@ class App extends Component {
   state = {
     artists,
     guesses: [],
-    scores: 0,
+    currScore: 0,
     highScore: 0,
     result: ""
   };
@@ -32,9 +32,9 @@ class App extends Component {
   };
 
   hIncrement = () => {
-    const scorNew = this.state.scores + 1;
+    const scorNew = this.state.currScore + 1;
     this.setState({
-      scores: scorNew,
+      currScore: scorNew,
       result: "Correcto Mundo"
     });
     if (scorNew >= this.state.highScore) {
@@ -47,7 +47,7 @@ class App extends Component {
 
   handleReset = () => {
     this.setState({
-      scores: 0,
+      currScore: 0,
       highScore: this.state.highScore,
       result: "Sorry, you got it wrong!",
       guesses: []
@@ -64,7 +64,11 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Header score={this.state.scorNew} highScore={this.state.highScore}>
+        <Header
+          currScore={this.state.currScore}
+          highScore={this.state.highScore}
+          result={this.state.result}
+        >
           Music Artists Click Game
         </Header>
         {this.state.artists.map(artists => (
