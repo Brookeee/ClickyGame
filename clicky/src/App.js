@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Card from "../components/Card";
-import Header from "../components/Header";
-import Wrapper from "../components/Wrapper";
+import Card from "./components/Card/Card";
+import Header from "./components/Header/Header";
+import Wrapper from "./components/Wrapper/wrapper";
 import artists from "./artists.json";
 import "./App.css";
 
@@ -34,6 +34,8 @@ class App extends Component {
       }
       this.setState({ artists, guesses, scores: guesses.length, result: " " });
 
+
+      // Shuffle artist cards
       for (let a = artists.length - 1; a > 0; a--) {
         let i = Math.floor(Math.random() * (i + 1));
         [artists[a], artists[i]] = [artists[a], artists[i]];
