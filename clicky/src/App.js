@@ -5,6 +5,14 @@ import Wrapper from "./components/Wrapper/wrapper";
 import artists from "./artists.json";
 import "./App.css";
 
+function randomizer(array) {
+  for (let a = array.length - 1; a > 0; a--) {
+    let i = Math.floor(Math.random() * (a + 1));
+    [array[a], array[i]] = [array[i], array[a]];
+  }
+  return array;
+}
+
 class App extends Component {
   state = {
     artists,
@@ -13,39 +21,50 @@ class App extends Component {
     highScore: 0,
     result: ""
   };
-  // shuffle cards when clicked
-  shuffleCard = id => {
-    let guesses = this.state.guesses;
 
-    if (guesses.includes(id)) {
-      this.setState({
-        guesses: [],
-        scores: 0,
-        result: "Sorry, you have lost!"
-      });
-      return;
+  clickHandler = id => {
+    if (this.state.guesses.indexOf(id) === -1) {
+      this.hIncrement();
+      this.setState({ guesses: this.state.guesses.concat(id) });
     } else {
-      guesses.push(id);
-
-      if (guesses.length === 12) {
-        this.setState({ score: 12, result: "Success! You won!", guesses: [] });
-        console.log("winner!");
-        return;
-      }
-      this.setState({ artists, guesses, scores: guesses.length, result: " " });
-
-
-      // Shuffle artist cards
-      for (let a = artists.length - 1; a > 0; a--) {
-        let i = Math.floor(Math.random() * (i + 1));
-        [artists[a], artists[i]] = [artists[a], artists[i]];
-      }
+      this.handleReset();
     }
   };
+
+  hIncrement = () => {
+    const scorNew = this.state.scores + 1;
+    this.setState({
+      scores: scorNew,
+      result: "Correcto Mundo"
+    });
+    if (scorNew >= this.state.highScore) {
+      this.setState({ highScore: scorNew });
+    } else if (scorNew === 12) {
+      this.setState({ result: "Success! You win!" });
+    }
+    this.handleShuffle();
+  };
+
+  handleReset = () => {
+    this.setState({
+      scores: 0,
+      highScore: this.state.highScore,
+      result: "Sorry, you got it wrong!",
+      guesses: []
+    });
+
+    this.handleShuffle();
+  };
+
+  handleShuffle = () => {
+    let mixUp = randomizer(artists);
+    this.setState({ artists: mixUp });
+  };
+
   render() {
     return (
       <Wrapper>
-        <Header score={this.state.scores} highScore={this.state.highScore}>
+        <Header score={this.state.scorNew} highScore={this.state.highScore}>
           Music Artists Click Game
         </Header>
         {this.state.artists.map(artists => (
@@ -54,12 +73,14 @@ class App extends Component {
             key={artists.id}
             name={artists.name}
             image={artists.image}
-            shuffleCard={this.shuffleCard}
+            clickHandler={this.clickHandler}
+            hIncrement={this.hIncrement}
+            handleReset={this.handleReset}
+            handleShuffle={this.handleShuffle}
           />
         ))}
       </Wrapper>
     );
   }
 }
-
 export default App;
