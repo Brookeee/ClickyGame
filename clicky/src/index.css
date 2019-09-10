@@ -1,9 +1,29 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-image: url("http://wallpaperping.com/wp-content/uploads/2018/10/blur-blue-gradient-cool-background-sp-2048x1152.jpg");
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.head{
+  text-align: center !important;
+  font-family: 'Amatic SC', cursive;
+  font-size: 80px;
+}
+.score {
+  text-align: center !important;
+  font-size: 34px;
+  font-family: 'Amatic SC', cursive;
+  
+}
+h3 {
+  font-size: 28px;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+}
+.head, .score , h3 {
+  color: white;
 }

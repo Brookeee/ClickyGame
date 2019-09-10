@@ -1,0 +1,8 @@
+img {
+    height: 260px;
+    box-shadow: 2px 2px;
+    float: left;
+}
+.card {
+    margin: 10px 20px;
+}
