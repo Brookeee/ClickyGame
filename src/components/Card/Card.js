@@ -9,7 +9,7 @@ function Card(props) {
       <div className="img-container">
         <img
           alt={props.name}
-          src={props.image}
+          src={process.env.PUBLIC_URL + props.image}
           onClick={() => props.clickHandler(props.id)}
         />
       </div>

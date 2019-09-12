@@ -17,7 +17,7 @@
     },{
         "id": 4, 
         "name": "Nipsey",
-        "image":"/images/Nipsey.jpg",
+        "image":"/images/nipsey.jpg",
         "count": 0
     },{
         "id": 5, 
@@ -42,7 +42,7 @@
     },{
         "id": 9, 
         "name": "Jay-Z",
-        "image":"/images/Jayz.jpg",
+        "image":"/images/jayz.jpg",
         "count": 0
     },{
         "id": 10, 
